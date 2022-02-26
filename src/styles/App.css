@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&family=Shizuru&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url(../images/foggy.jpeg);
+  background-position: top;
+  background-size: cover;
+  -webkit-backdrop-filter: hue-rotate(305deg) blur(5px) brightness(1.3);
+          backdrop-filter: hue-rotate(305deg) blur(5px) brightness(1.3);
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    height: auto;
+    background: #5c5c5c;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.weatherBox {
+  position: relative;
+  height: 80vh;
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 900px) {
+  .weatherBox {
+    height: 100vh;
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+  }
+}
+
+.weatherBox .sign {
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  left: 4em;
+  top: 3em;
+  font-size: .9em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+  .weatherBox .sign {
+    left: auto;
+    top: .5em;
+    right: 1em;
+    color: #202020;
+  }
+}
+
+.weatherBox .rightInfo {
+  position: absolute;
+  background: rgba(26, 32, 30, 0.671);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  width: 40%;
+  height: 100%;
+  right: 0;
+  overflow: overlay;
+}
+
+@media screen and (max-width: 900px) {
+  .weatherBox .rightInfo {
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+  }
+}
+
+.weatherBox .rightInfo .searchBox {
+  width: 100%;
+  height: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media screen and (max-width: 500px) {
+  .weatherBox .rightInfo .searchBox {
+    height: 3.5em;
+  }
+}
+
+.weatherBox .rightInfo .searchBox .inputBox {
+  font-size: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.weatherBox .rightInfo .searchBox .inputBox input {
+  font-size: .52em;
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 8px 2px;
+  color: #fff;
+  font-weight: 300;
+  width: 150px;
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.247);
+  margin-left: 30%;
+}
+
+.weatherBox .rightInfo .searchBox .searchIconBox {
+  background: #579092;
+  width: 5em;
+  height: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  .weatherBox .rightInfo .searchBox .searchIconBox {
+    height: 3.5em;
+    width: 3.5em;
+  }
+}
+
+.weatherBox .rightInfo .searchBox .searchIconBox button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.weatherBox .rightInfo .searchBox .searchIconBox button:hover {
+  background: #4e8386;
+}
+
+.weatherBox .rightInfo .searchBox .searchIconBox button img {
+  width: 25px;
+}
+
+.weatherBox .rightInfo .moreInfo {
+  width: 100%;
+  height: calc(100% - 5em);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoTop {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 10%;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoTop > li {
+  padding: .9em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 200;
+  -webkit-transition: .4s;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoTop > li:hover {
+  color: #6dbdb6;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoTop > li:last-child {
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.247);
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoBottom {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: .9em 10%;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoBottom div {
+  width: 100%;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoBottom ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: 200;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoBottom ul > li {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .9em 0;
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoBottom ul > li:last-child {
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.247);
+}
+
+.weatherBox .rightInfo .moreInfo .moreInfoBottom ul > li p:last-child {
+  font-weight: 400;
+}
+
+.weatherBox .mainTemp {
+  width: 100%;
+  height: 14em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  padding-left: 3.5em;
+}
+
+@media screen and (max-width: 900px) {
+  .weatherBox .mainTemp {
+    top: 0;
+    padding-left: .5em;
+    height: 8em;
+    color: #202020;
+  }
+}
+
+.weatherBox .mainTemp .mainTempH1 {
+  font-size: 6em;
+  font-weight: 400;
+  margin-right: 5px;
+  letter-spacing: -4px;
+}
+
+@media screen and (max-width: 500px) {
+  .weatherBox .mainTemp .mainTempH1 {
+    font-size: 5em;
+  }
+}
+
+.weatherBox .mainTemp .cityName h1 {
+  font-size: 2.5em;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .weatherBox .mainTemp .cityName h1 {
+    font-size: 2em;
+  }
+}
+
+.weatherBox .mainTemp .cityName h1 span {
+  font-size: .4em;
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+.weatherBox .mainTemp .cityName p {
+  font-size: 0.8em;
+  line-height: 0.7;
+  font-weight: 300;
+  margin-left: 3px;
+}
+/*# sourceMappingURL=App.css.map */
